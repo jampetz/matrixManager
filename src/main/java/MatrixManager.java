@@ -19,21 +19,21 @@ public class MatrixManager {
         return matrixBean;
     }
 
-    public void printArray(Matrix matrixBean) {
-        List<List<Integer>> tempList = matrixBean.getMatrixBody();
-        for (int i = 0; i < matrixBean.getRows(); i++) {
-            for (int j = 0; j < matrixBean.getColumns(); j++) {
+    public void printArray(Matrix matrix) {
+        List<List<Integer>> tempList = matrix.getMatrixBody();
+        for (int i = 0; i < matrix.getRows(); i++) {
+            for (int j = 0; j < matrix.getColumns(); j++) {
                 System.out.print(tempList.get(i).get(j) + " ");
             }
             System.out.println();
         }
     }
 
-    public int findMin(Matrix matrixBean) {
-        List<List<Integer>> tempList = matrixBean.getMatrixBody();
+    public int findMin(Matrix matrix) {
+        List<List<Integer>> tempList = matrix.getMatrixBody();
         int minElement = tempList.get(0).get(0);
-        for (int i = 0; i < matrixBean.getRows(); i++) {
-            for (int j = 0; j < matrixBean.getColumns(); j++) {
+        for (int i = 0; i < matrix.getRows(); i++) {
+            for (int j = 0; j < matrix.getColumns(); j++) {
                 if (tempList.get(i).get(j) < minElement) {
                     minElement = tempList.get(i).get(j);
                 }
@@ -43,11 +43,11 @@ public class MatrixManager {
         return minElement;
     }
 
-    public int findMax(Matrix matrixBean) {
-        List<List<Integer>> tempList = matrixBean.getMatrixBody();
+    public int findMax(Matrix matrix) {
+        List<List<Integer>> tempList = matrix.getMatrixBody();
         int maxElement = tempList.get(0).get(0);
-        for (int i = 0; i < matrixBean.getRows(); i++) {
-            for (int j = 0; j < matrixBean.getColumns(); j++) {
+        for (int i = 0; i < matrix.getRows(); i++) {
+            for (int j = 0; j < matrix.getColumns(); j++) {
                 if (tempList.get(i).get(j) > maxElement) {
                     maxElement = tempList.get(i).get(j);
                 }
@@ -56,11 +56,11 @@ public class MatrixManager {
         return maxElement;
     }
 
-    public int findSum(Matrix matrixBean) {
-        List<List<Integer>> tempList = matrixBean.getMatrixBody();
+    public int findSum(Matrix matrix) {
+        List<List<Integer>> tempList = matrix.getMatrixBody();
         int totalSum = 0;
-        for (int i = 0; i < matrixBean.getRows(); i++) {
-            for (int j = 0; j < matrixBean.getColumns(); j++) {
+        for (int i = 0; i < matrix.getRows(); i++) {
+            for (int j = 0; j < matrix.getColumns(); j++) {
                 totalSum += tempList.get(i).get(j);
             }
         }

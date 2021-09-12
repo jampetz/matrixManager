@@ -5,7 +5,7 @@ public class Matrix {
     private int rows;
     private int columns;
     private List<List<Integer>> matrixBody;
-    private String author;
+    private String authorName;
 
     @Override
     public boolean equals(Object o) {
@@ -15,20 +15,20 @@ public class Matrix {
         return rows == matrix.rows &&
                 columns == matrix.columns &&
                 Objects.equals(matrixBody, matrix.matrixBody) &&
-                Objects.equals(author, matrix.author);
+                Objects.equals(authorName, matrix.authorName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rows, columns, matrixBody, author);
+        return Objects.hash(rows, columns, matrixBody, authorName);
     }
 
     public String getAuthor() {
-        return author;
+        return authorName;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String authorName) {
+        this.authorName = authorName;
     }
 
     public int getColumns() {
