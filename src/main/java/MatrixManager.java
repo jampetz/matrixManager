@@ -3,20 +3,20 @@ import java.util.List;
 
 public class MatrixManager {
     public Matrix createArray(int rows, int columns, String authorName) {
-        List<List<Integer>> tempList = new ArrayList();
+        List<List<Integer>> tempList = new ArrayList<>();
         int randomNumberRange = 10;
         for (int i = 0; i < rows; i++) {
-            tempList.add(new ArrayList());
+            tempList.add(new ArrayList<Integer>());
             for (int j = 0; j < columns; j++) {
                 tempList.get(i).add((int) (Math.random() * randomNumberRange));
             }
         }
-        Matrix matrixBean = new Matrix();
-        matrixBean.setRows(rows);
-        matrixBean.setColumns(columns);
-        matrixBean.setMatrixBody(tempList);
-        matrixBean.setAuthor(authorName);
-        return matrixBean;
+        Matrix matrix = new Matrix();
+        matrix.setRows(rows);
+        matrix.setColumns(columns);
+        matrix.setMatrixBody(tempList);
+        matrix.setAuthor(authorName);
+        return matrix;
     }
 
     public void printArray(Matrix matrix) {
@@ -39,7 +39,6 @@ public class MatrixManager {
                 }
             }
         }
-
         return minElement;
     }
 
@@ -65,5 +64,12 @@ public class MatrixManager {
             }
         }
         return totalSum;
+    }
+
+    public void printArrayInfo(Matrix matrix) {
+        System.out.println("Min/max: " + findMin(matrix) + " / " + findMax(matrix));
+        System.out.println("Sum: " + findSum(matrix));
+        System.out.println("Author: " + matrix.getAuthor());
+        System.out.println();
     }
 }

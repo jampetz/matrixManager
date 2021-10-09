@@ -13,10 +13,10 @@ public class MatrixWriteReadTest {
 
     @Before
     public void initMatrix() {
-        List<List<Integer>> matrixBody = new ArrayList();
+        List<List<Integer>> matrixBody = new ArrayList<>();
         int number = 1;
         for (int i = 0; i < 2; i++) {
-            matrixBody.add(new ArrayList());
+            matrixBody.add(new ArrayList<Integer>());
             for (int j = 0; j < 2; j++) {
                 matrixBody.get(i).add(number);
                 number++;
